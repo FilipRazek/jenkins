@@ -39,10 +39,8 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import org.htmlunit.HttpMethod;
 import org.htmlunit.WebRequest;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
-import org.jvnet.hudson.test.Issue;
 import org.jvnet.hudson.test.JenkinsRule;
 import org.jvnet.hudson.test.MockAuthorizationStrategy;
 
@@ -58,8 +56,6 @@ public class RunIdMigratorTest {
         assertTrue(legacyIds.exists());
     }
 
-    @Ignore("TODO Item#onCreatedFromScratch is not called")
-    @Issue("JENKINS-64356")
     @Test
     public void legacyIdsPresentViaRestApi() throws Exception {
         User user = User.getById("user", true);
@@ -82,8 +78,6 @@ public class RunIdMigratorTest {
         assertTrue(legacyIds.exists());
     }
 
-    @Ignore("TODO Item#onCreatedFromScratch is not called")
-    @Issue("JENKINS-64356")
     @Test
     public void legacyIdsPresentViaCli() {
         String jobName = "test" + j.jenkins.getItems().size();
